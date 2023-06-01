@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler #Normalizar los datos
 from sklearn.model_selection import train_test_split #permite hacer una división de un conjunto de datos en dos
 #bloques de entrenamiento y prueba de un modelo
 if __name__ == '__main__':
-    dt_heart=pd.read_csv('./datos/Reporte23.csv')
+    dt_heart=pd.read_csv('./datos/datasetunido.csv')
     #print(dt_heart.head(7))
 dt_features=dt_heart.drop(['INCIDENCIA'],axis=1) #las featurus sin el target
 dt_target = dt_heart['INCIDENCIA'] #obtenemos el target
@@ -34,7 +34,7 @@ ipca.fit(X_train)
 #en cada uno de estos componentes, así podremos identificar cuáles son realmente importantes
 #para nuestro modelo
 plt.plot(range(len(pca.explained_variance_)),pca.explained_variance_ratio_) #gneera desde 0 hasta los componentes
-#plt.show()
+plt.show()
 #Ahora vamos a configurar nuestra regresión logística
 logistic=LogisticRegression(solver='lbfgs')
 # Configuramos los datos de entrenamiento
